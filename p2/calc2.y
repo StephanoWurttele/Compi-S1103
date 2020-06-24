@@ -30,7 +30,7 @@
       for(int i=10; i<space; i++){
         printf(" ");
       };
-      printf("%d ", nodo->val);
+      printf("Nodo->val = %d ", nodo->val);
       printTree(nodo->left,space);
       printf("\n");
     }
