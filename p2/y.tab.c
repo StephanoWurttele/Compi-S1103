@@ -497,7 +497,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    82,    82,    89,    93,    97,   103,   108
+       0,    82,    82,    93,    98,   103,   110,   115
 };
 #endif
 
@@ -1265,59 +1265,66 @@ yyreduce:
         case 2:
 #line 82 "calc2.y" /* yacc.c:1646  */
     {
+                  printf("numbase1");
                   (yyval.nodo) = initNode(0, 0);
+                  printf("numbase2");
                   (yyval.nodo)->base = (yyvsp[0].digit);
+                  printf("numbase3");
                   (yyval.nodo)->left = (yyvsp[-1].nodo);
+                  printf("numbase4");
                   if(eval((yyval.nodo)) == -1){printf("Digit to big for base\n"); yyerrok;} else { printf("Base is %d and final number is %d\n", (yyval.nodo)->base, (yyvsp[-1].nodo)->val); printTree((yyvsp[-1].nodo),2); };
                     }
-#line 1274 "y.tab.c" /* yacc.c:1646  */
+#line 1278 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 89 "calc2.y" /* yacc.c:1646  */
+#line 93 "calc2.y" /* yacc.c:1646  */
     {
+            printf("carbase\n");
             (yyval.digit) = 8;
            }
-#line 1282 "y.tab.c" /* yacc.c:1646  */
+#line 1287 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 93 "calc2.y" /* yacc.c:1646  */
+#line 98 "calc2.y" /* yacc.c:1646  */
     {
+            printf("carbase\n");
             (yyval.digit) = 10;
            }
-#line 1290 "y.tab.c" /* yacc.c:1646  */
+#line 1296 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 97 "calc2.y" /* yacc.c:1646  */
+#line 103 "calc2.y" /* yacc.c:1646  */
     {
+                  printf("num\n");
                   (yyval.nodo) = initNode(0, 1);
                   (yyval.nodo)->left = (yyvsp[-1].nodo);
                   (yyval.nodo)->right = (yyvsp[0].nodo);
                 }
-#line 1300 "y.tab.c" /* yacc.c:1646  */
+#line 1307 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 103 "calc2.y" /* yacc.c:1646  */
+#line 110 "calc2.y" /* yacc.c:1646  */
     {
                   (yyval.nodo) = initNode(0, 1);
                   (yyval.nodo)->left = (yyvsp[0].nodo);
             }
-#line 1309 "y.tab.c" /* yacc.c:1646  */
+#line 1316 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 108 "calc2.y" /* yacc.c:1646  */
+#line 115 "calc2.y" /* yacc.c:1646  */
     {
                   (yyval.nodo) = initNode((yyvsp[0].digit), 2);
                 }
-#line 1317 "y.tab.c" /* yacc.c:1646  */
+#line 1324 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1321 "y.tab.c" /* yacc.c:1646  */
+#line 1328 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1545,7 +1552,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 111 "calc2.y" /* yacc.c:1906  */
+#line 118 "calc2.y" /* yacc.c:1906  */
 
 
 int main(){
